@@ -6,6 +6,30 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 -- empty setup using defaults
-require("nvim-tree").setup()
+local setup, nvimtree = pcall(require, "nvim-tree")
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeOpen)
+if not setup then
+  return
+end
+
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
+
+
+nvimtree.setup({
+renderer = {
+    icons = {
+      glyphs = {
+        folder = {
+          arrow_closed = "", -- arrow when folder is closed
+          arrow_open = "", -- arrow when folder is open
+        },
+      },
+    },
+  },
+})
+
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeOpen)
+vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
