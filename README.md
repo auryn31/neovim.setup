@@ -10,6 +10,7 @@ Update: with config of [Josean Martinez](https://www.youtube.com/watch?v=vdn_pKJ
 - `<leader>ff` -> search in all files
 - `<leader>fs` -> Grep files
 - `<leader>a` -> add to harpoon
+- `<leader>rn` -> rename
 - `<C-e>` -> open harpoon menu
 - `<leader>e` -> toggle side menu
 - `<C-d>` -> jump page down
@@ -23,3 +24,6 @@ Update: with config of [Josean Martinez](https://www.youtube.com/watch?v=vdn_pKJ
 - `<leader>ca` -> show code action
 - `<leader>D` -> show error in line
 - `<leader>d` -> show error on cursor
+- `<leader>gs` -> git status
+- `<leader>gfc` -> git file commits
+- `<leader>gc` -> git commits

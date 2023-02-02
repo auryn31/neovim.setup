@@ -82,6 +82,8 @@ lspconfig["cssls"].setup({
 	on_attach = on_attach,
 })
 
+lspconfig["denols"].setup({})
+
 -- configure tailwindcss server
 lspconfig["tailwindcss"].setup({
 	capabilities = capabilities,
