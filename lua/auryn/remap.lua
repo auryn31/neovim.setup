@@ -64,3 +64,8 @@ vim.keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all 
 vim.keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
+
+-- barbar tab bar remapping
+vim.keymap.set("n", "<C-,>", "<cmd>BufferPrevious<cr>")
+vim.keymap.set("n", "<C-.>", "<cmd>BufferNext<cr>")
+vim.keymap.set("n", "<C-/>", "<cmd>BufferClose<cr>")
