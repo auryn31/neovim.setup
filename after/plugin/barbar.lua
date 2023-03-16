@@ -1,3 +1,4 @@
+-- https://github.com/romgrk/barbar.nvim
 local setup, _ = pcall(require, "bufferline")
 
 if not setup then

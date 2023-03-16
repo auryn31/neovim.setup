@@ -101,6 +101,9 @@ return packer.startup(function(use)
 	use("nvim-tree/nvim-web-devicons")
 	use({ "romgrk/barbar.nvim", requires = "nvim-web-devicons" })
 
+	-- vertical lines
+	use("lukas-reineke/indent-blankline.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
