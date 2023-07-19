@@ -117,6 +117,15 @@ lspconfig["emmet_ls"].setup({
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
+-- configure java language server
+-- download lombok jar -> https://projectlombok.org/download
+-- move it to $HOME/.local/share/java/lombok.jar
+-- export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"
+lspconfig["jdtls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
