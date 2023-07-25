@@ -121,9 +121,23 @@ lspconfig["emmet_ls"].setup({
 -- download lombok jar -> https://projectlombok.org/download
 -- move it to $HOME/.local/share/java/lombok.jar
 -- export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"
+local function on_language_status(_, result)
+	-- Ignore nil messages.
+	if result.message == nil then
+		return
+	end
+	local command = vim.api.nvim_command
+	command("echohl ModeMsg")
+	command(string.format('echo "%s"', result.message))
+	command("echohl None")
+end
+
 lspconfig["jdtls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	handlers = {
+		["$/progress"] = vim.schedule_wrap(on_language_status),
+	},
 })
 
 -- configure lua server (with special settings)
